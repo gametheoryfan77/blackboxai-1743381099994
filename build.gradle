@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'org.springframework.boot' version '3.2.0'
+}
+
+repositories {
+    mavenCentral()
+    maven { url 'https://repo.spring.io/milestone' }
+    maven { url 'https://repo.spring.io/snapshot' }
+}
+
+dependencies {
+    implementation platform('org.springframework.boot:spring-boot-dependencies:3.2.0')
+    implementation 'org.lwjgl:lwjgl:3.3.3'
+    implementation 'org.lwjgl:lwjgl-opengl:3.3.3'
+    implementation 'org.lwjgl:lwjgl-glfw:3.3.3'
+    implementation 'org.python:jython-standalone:2.7.3'
+    implementation 'org.jbox2d:jbox2d-library:2.2.1.1'
+    implementation 'org.joml:joml:1.10.5'
+    
+    // Remove spring-boot-starter-web since we don't need it for the core engine
+}
+
+application {
+    mainClass = 'com.unrealclone.Main'
+}
